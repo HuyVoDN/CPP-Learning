@@ -200,10 +200,144 @@ int main()
 	*/
 	
 	/* Flags
-	Flag is a Boolean or integer variable that signals when a condition exists
-		 
-	 
+	//Flag is a Boolean or integer variable that signals when a condition exists
+	
+	bool Something = false;        <--- It sets the condition of the Something boolean to false, it can be used as a flag to indicate something for your program
+									    like a sales quota.
+	bool Something = 0;            <--- 0 means false, 1 means true, functions the same as above.
 	 
 	*/
+
+	/* Logical Operators
+	&& - AND        // Both expressions must be true for the entire thing to be true
+	|| - OR         // Either one must be true for the whole thing to be true, or both
+	!  - NOT        // Reverse the original "truth" condition of the boolean, or variable
+	
+	if ( x < 10 && x == 2 )
+		cout << " x is 2.";  <-- If x is SMALLER THAN 10 AND x is EQUAL TO 2, then print the statement
+	
+	if ( x < 10 || x == 2)
+		cout << " x could or couldn't be 2."; <--- If x is SMALLER THAN 10 OR x is EQUAL TO 2, then print statement. //This is a very vague If statement, avoid it.
+																												// x could be 9, and it isn't 2, yet the statement still executes
+																												// because it isn't wrong.
+	if ( x != 2)
+		cout << " x isn't 2."; <-- If x is NOT 2, then print statement. // Well duh, no shit
+	*/
+
+	/* Validating User Input
+	Any program should be written to filter out bad input.
+	By using an if else nested loop
+	if (expression)
+	{
+		if(expression)
+		else if(expression)
+			statement;
+			etc...
+	}
+	else
+		statement; // this is for any invalid input the user might put in.
+	
+	*/
+	/* Comparing Characters and Strings
+	Character				ASCII Value
+	0 - 9					48 - 57
+	A - Z					65 - 90
+	a - z					97 - 122
+	Blank/Space				32
+	Period					46
+	
+	so when 2 characters are being compared, the computer actually compares the ASCII Value as they are stored as integers in memory.
+
+	Strings are the same, the ASCII value are again, be compared. It is actually the ASCII values of the character making up the strings.
+	They actually compare the value of each character one by one.
+	String str1 = "ABC";
+	String str2 = "XYZ"; // str2 > str1 since the ASCII value of str2 > ASCII value of str1.
+	*/
+	
+	/* The Conditional Operator
+	?  -  Executes the statement if the first expression is true.
+	:  -  Executes the statement if the first expression is false.
+	
+	(x < 0) ? (y = 10) : (z = 20);  // If the first expression is true, executes y = 10.
+								    // If the first expression is false, executes z = 20.
+	
+	a = x > 100 ? 0 : 1; // if x > 100 is TRUE, executes a = 0, if x > 100 is FALSE, executes a = 1;
+	The statement above is similar to this if else statement
+	if (x > 100)
+		a = 0;
+	else
+		a = 1;
+	*/
+	
+	/* The Switch Statement
+	switch ( IntegerExpression )                              
+	{
+		case ConstantExpression:
+			statement or more statements;
+			break;
+		case ConstantExpression:
+			statement or more statements;						<----- Switch Statement format
+			break;
+		//repeat as much as you need
+		
+		default:
+			statement or more statements;
+			break;
+
+			
+	}
+	//this is very useful to create a menu
+	// ConstantExpression must be an integer literal or a constant.
+	
+	Example is as follow:
+
+	char choice;
+	cin >> choice;
+	switch(choice)
+	{
+		case 'A': 
+			cout << "You've entered A.\n";
+			break;
+		case 'B':
+			cout << "You've entered B.\n";
+			break;
+		default:
+			cout << "You did not enter neither.\n";
+	}
+	*/
+
+	/* The scope of a variable is LIMITED to the BLOCK IN WHICH IT IS DEFINED.
+	//Common practice to define a function's variables at the top of the function itself, to avoid confusion, both to the dev and the computer.
+	For example
+
+	int main()
+	{	
+		int Income = 10;
+		int salary;					<--- these variables here, exists within the main() statement, thus it can be used by anything inside of the int main() as well.
+		cin >> salary;
+		
+		if ( salary < Income )
+		{
+			int years;                 <----- The int years variable only exists within this if statement, marking the scope of it to be inside this if statement only
+			cin >> years;
+		}
+	}
+
+	// variables of the same names can also exists inside the same function, as long as the duplicated one stays within another scope
+	int main()
+	{
+		int Income = 10;
+		int salary;					
+		cin >> salary;
+
+		if ( salary < Income )
+		{
+			int Income;                 <----- The int Income here as the same name as the first one, however, it is a COMPLETELY different variable stored only inside the If statement
+			cin >> Income;
+		}
+	}
+
+	*/
+	
 return 0;
 }
