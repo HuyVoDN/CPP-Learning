@@ -339,6 +339,80 @@ int main()
 
 	
 	*/
+	
+	/*
+	============================================================================================
+	====================== Chapter 4 PROGRAMMING CHALLENGES ====================================
+	============================================================================================
+	// Name: Time Calculator.
+	// Problem Number: Page 223, Problem #7.
+	// Programmer: Huy Vo.
+	// Purpose: Convert the user's input seconds into minutes, hours, days
+	// Improvision: Instead of just doing simple calculation like 100 seconds / 60 = 1.667 minutes, It would be alot better if it was displayed as 1 minute and 40 seconds.
+	// Status : [FINISHED]
+	static int minSec = 60, hourSec = 3600, daySec = 86400;
+	int seconds, 
+		extraSecInMin, extraMinInHour, minutes,
+		extraSecInHour, extraHourInDay, hours,
+		extraSecInDay, days; 
+	cin >> seconds;
+
+	minutes = seconds / minSec;
+	extraSecInMin = seconds % minSec;
+	extraMinInHour = seconds % hourSec / minSec;
+	
+	hours = seconds / hourSec;
+	extraSecInHour = seconds % hourSec;
+	extraHourInDay = seconds % daySec / hourSec;
+	
+	days = seconds / daySec;
+	extraSecInDay = seconds % daySec;
+
+	if (seconds >= minSec && seconds < hourSec) // easiest, just needs amount of total sec / 60, and remainder of that is the extra seconds.
+	{
+		cout << minutes << " Minute(s) and " << extraSecInMin << " Second(s)";
+	}
+	else if (seconds >= hourSec && seconds < daySec) // what the fucking fuck is this?
+	{
+		if ( seconds % hourSec > 60) // for the amount of remainder of that given seconds divide by 3600 is bigger than 60, like 3661 for example
+									 // as it would be 3661 = 3600(1 hour) + 60(1 minute) + 1(1 sec). So 3661 % 3600 = 61, which 61 > 60.
+			cout << hours << " Hour(s) and " <<  extraMinInHour << " Minute(s) and " << extraSecInMin << " Second(s)";
+		else // this else is for the case that the Extra Seconds in that given Hour(s) does not exceed 60.
+			cout << hours << " Hour(s) and " << extraSecInHour << " second(s)";
+	
+	
+	}
+	else if (seconds >= daySec) // holy grail of fucked 
+	{
+		//if statement for remaining sec > 3600
+		if (seconds % daySec > 3600) //for remainder of seconds of a day exceeds 3600, which is an hour of seconds
+		{
+			if (extraMinInHour >= 1 && extraSecInMin >= 1) // same statement but with 1 or more extra minute(s) AND second(s), by utilizing the method of taking that remainder
+														   // mod by 3600 and divide by 60, giving us the Extra Minute(s). As for, seconds, we use the value inputted by user
+														   // mod that by 60, so if the remainder of seconds % 60  . 
+				
+				//using extraSecInMin as well as extraMinInHour is better because it takes the remainder amount 
+				//of the seconds in the amount of Extra Minutes in the calculated Extra Hours, calculated by the program, check variables upstair for reference
+				//instead of using extraSecInDay because it will gives the 
+				//total remainder of Day % 86400 instead.
+				cout << days << " Day(s) and " << extraHourInDay << " Hour(s) and " << extraMinInHour << " Minute(s) and " << extraSecInMin << " Second(s)";
+			
+			else if (extraMinInHour < 1 && extraSecInMin >= 1) // less than 1 extra minute but more than 1 extra seconds.
+				//same things are applied here
+				cout << days << " Day(s) and " << extraHourInDay << " Hour(s) and " << extraSecInMin << " Second(s)";
+			
+			else if (extraMinInHour >= 1 && extraSecInMin < 1) //more than 1 extra minute but less than 1 extra second
+				cout << days << " Day(s) and " << extraHourInDay << " Hour(s) and " << extraMinInHour << " Minute(s)";
+			
+			else if (extraSecInMin < 1) // less than 1 extra second and minute.
+				cout << days << " Day(s) and " << extraHourInDay << " Hour(s)";
+		}
+		//else if()//if statement for remaining sec > 60
+		else
+			cout << days << " Day(s)";
+	}
+	*/
+
 
 return 0;
 }

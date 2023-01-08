@@ -18,5 +18,8 @@
     <ClCompile Include="Everything in C++ Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PuesdoCodePractice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
