@@ -83,7 +83,7 @@ int main()
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////               CHAPTER 4               /////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////               CHAPTER 4 MAKING DECISIONS              ////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	/* Relational Operators 
@@ -340,17 +340,17 @@ int main()
 	
 	*/
 	
-	/*
-	============================================================================================
-	====================== Chapter 4 PROGRAMMING CHALLENGES ====================================
-	============================================================================================
+	
+	//============================================================================================
+	//====================== Chapter 4 PROGRAMMING CHALLENGES ====================================
+	//============================================================================================
 	// Name: Time Calculator.
 	// Problem Number: Page 223, Problem #7.
 	// Programmer: Huy Vo.
 	// Purpose: Convert the user's input seconds into minutes, hours, days
 	// Improvision: Instead of just doing simple calculation like 100 seconds / 60 = 1.667 minutes, It would be alot better if it was displayed as 1 minute and 40 seconds.
 	// Status : [FINISHED]
-	static int minSec = 60, hourSec = 3600, daySec = 86400;
+	/*static int minSec = 60, hourSec = 3600, daySec = 86400;
 	int seconds, 
 		extraSecInMin, extraMinInHour, minutes,
 		extraSecInHour, extraHourInDay, hours,
@@ -411,7 +411,99 @@ int main()
 		else
 			cout << days << " Day(s)";
 	}
-	*/
+	
+
+
+	//Name: Wi-Fi Diagnostic Tree
+	//Where: Page 228-229, Problem #27
+	//Goal: Using a flowchart and create a program to help a dumbass fix his wifi.
+	//Status: [ FINISHED ]
+	//Thoughts: This is an If-Else Inception.
+	
+	string answer;
+	cout << "Reboot the computer and try to connect.\n" << "Did that fix the problem?" << endl;
+	cin >> answer;
+	if (answer == "yes")
+		exit(0);
+	else 
+	{
+		cout << "Reboot the router and try to connect.\n" << "Did that fix the problem?" << endl;
+		cin >> answer;
+		
+		if (answer == "yes")
+			exit(0);
+		else 
+		{
+			cout << "Make sure the cables between the router and modem are plugged in firmly.\n" << "Did that fix the problem?" << endl;
+			cin >> answer;
+			
+			if (answer == "yes")
+				exit(0);
+			else
+			{
+				cout << "Move the router to a new location and try to connect.\n" << "Did that fix the problem?" << endl;
+				cin >> answer;
+
+				if (answer == "yes")
+				{
+					cout << "you stupid fuck.";
+					exit(0);
+					
+				}
+				else
+					cout << "just fucking smash it and buy a new one you brokie :) \n\n\n ";
+			}
+		}
+	}
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////               CHAPTER 5 LOOPS AND FILES              ///////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////
+////////////   5.1) The Increment and Decrement Operators   ///////////
+///////////////////////////////////////////////////////////////////////
+/*
+      ++ //increasing by one.
+	  -- //decreasing by one.
+	 // Postfix
+	  num++; //num variable is being increment/added by 1.
+	  num--; //num variable is being decreased by 1.
+	  
+	  // Prefix
+	  ++num; //num variable is being increment/added by 1.
+	  --numl //num variable is being decreased by 1.
+	 
+	 // Main difference between pre and post
+	  num++; //will increment the value after it has been used in an expression
+	  ++num; //will increment the value before it might be used in an expression
+
+	  //Comparison between pre or post
+	  int num = 4;
+	  cout << num; // Displays 4 | num = 4
+	  cout << num++; //Displays 4, then adds 1 to it | num = 5
+	  cout << num; //Displays 5 | num = 5
+	  cout >> ++num; //adds 1 to num, then displays 6 | num =6;
+	  cout >> num; //Displays 6 | num = 6
+*/
+///////////////////////////////////////////////////////////////////////
+////////////			5.2) The While Loop          //////////////////
+///////////////////////////////////////////////////////////////////////
+/*
+
+
+
+*/
+
 
 
 return 0;
