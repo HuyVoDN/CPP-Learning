@@ -499,9 +499,13 @@ int main()
 ////////////			5.2) The While Loop          //////////////////
 ///////////////////////////////////////////////////////////////////////
 /*
-
-
-
+	while(expression)
+	{ 
+		statement or block of statements
+		a statement to stop the loop, aka makes the expression false;              //General format of the While Loop
+	}
+	// The cycle in the while loop is repeated until the expression becomes false
+	//Infinite loop will occurs if there is no statement to stop the loop
 */
 
 
