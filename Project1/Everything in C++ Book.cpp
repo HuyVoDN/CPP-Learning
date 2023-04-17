@@ -501,14 +501,46 @@ int main()
 /*
 	while(expression)
 	{ 
-		statement or block of statements
+		statement or block of statements;
 		a statement to stop the loop, aka makes the expression false;              //General format of the While Loop
 	}
 	// The cycle in the while loop is repeated until the expression becomes false
 	//Infinite loop will occurs if there is no statement to stop the loop
+	//while loop is a pretest loop, meaning it test the expression before it runs the statement(s) inside
+
+	
+	while(expression)
+	{
+		statement or block of statements; // a great way to achieve an infinite loop, because it has no way to stop the loop, aka the value changes to reflect the expression.
+	}
+
 */
+///////////////////////////////////////////////////////////////////////
+////////////			5.3) Using While Loop for Input Validation          //////////////////
+///////////////////////////////////////////////////////////////////////
 
+/*
+	// INPUT VALIDATION FLOWCHART //
+	1) Read the first value.
+	2) Is the value valid? 
+		a) If yes, display error message --> Read another value, then repeat the process until it is valid.
+		b) If no, skips.	
 
+	// Using the while loop Example //
+	cout << "Enter a number in the range 1-100: ";
+	cin >> number;
+	while(number < 1 || number > 100)
+	{
+		cout << "Error: Enter a value in the range 1-100: ";
+		cin >> number; // this is to stops the loop, and validate the input
+	}
+	This code allows the user to enter a number. It takes place before the loop, if the input is smaller than 1 OR bigger than 100, the input will be valid, and the loop will be skipped
+	However, if it isn't either, it the cout statement will displays, then console will prompt the user to enter the valid input.
+		
+*/
+///////////////////////////////////////////////////////////////////////
+////////////			5.3) Counters          ////////////////////////
+///////////////////////////////////////////////////////////////////////
 
 return 0;
 }
